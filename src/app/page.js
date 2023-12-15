@@ -6,7 +6,6 @@ import SectionHeaders from "./components/layout/SectionHeaders"
 export default function Home() {
   return (
     <>
-      <Header />
       <Hero/>
       <HomeMenu/>
       <section className="text-center my-16">
@@ -37,9 +36,6 @@ export default function Home() {
             <a className="text-4xl underline text-gray-500" href="tel:555-555-5555">555-555-5555</a>
         </div>
       </section>
-      <footer className="border-t p-8 text-center text-gray-500 mt-16">
-          &copy; 2023 All rights reserved
-      </footer>
     </>
   )
 }
