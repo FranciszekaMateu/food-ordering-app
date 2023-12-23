@@ -15,7 +15,16 @@ export default function ProfilePage() {
     return redirect('/login');
   }
   const userImage = session.data.user.image;
+  async function handleProfileInfoUpdate(ev){
+    ev.preventDefault();
+    const response = await fetch('/api/profile', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({name: userName})});
 
+  }
   return (
     <section className="mt-8">
         <h1 className="text-center text-primary text-4xl mb-4">Profile</h1>
@@ -29,11 +38,11 @@ export default function ProfilePage() {
                         </button>
                     </div>
                 </div>
-                <div className="grow">
+                <form className="grow" onSubmit={handleProfileInfoUpdate}>
                     <input value={userName} onChange={ev =>setUserName(ev.target.value)} type="text" placeholder="First Name and last name" /> 
                     <input type="email" disabled={true} value={session.data.user.email} placeholder="email" /> 
                     <button type="submit">Save</button>    
-                </div>
+                </form>
             </div>
         </div>
     </section>
