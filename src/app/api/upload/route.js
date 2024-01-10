@@ -30,7 +30,7 @@ export async function POST(req) {
             ContentType: file.type,
             Body: buffer,
         }))
-        return Response.json({url: `https://franciszeka-food-ordering.s3.amazonaws.com/${newFileName}`})
+        return Response.json(`https://franciszeka-food-ordering.s3.amazonaws.com/${newFileName}`)
     }
   return Response.json(true);
 }
