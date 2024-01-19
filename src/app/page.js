@@ -11,23 +11,19 @@ export default function Home() {
       <section className="text-center my-16">
         <SectionHeaders subHeader='Our Story' mainHeader='About us' />
         <div className="text-gray-500 max-w-md mx-auto mt-4 flex flex-col gap-4" >
-        <p >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
-        anim id est laborum        
-        </p>
-        <p>
+        <p>Welcome to SushiT, where tradition embraces innovation in the delicate 
+        art of sushi cuisine.</p>
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-         commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in c
-         ulpa qui officia deserunt mollit anim id est laborum       
-        </p>
+        <p>Established in 2010, SushiT is the culmination of a dream to bring the authentic 
+        Japanese sushi experience to the heart of New York City. Our head chef, Chef Hiroshi Nakamura, 
+        trained in the prestigious sushi schools of Tokyo, brings not only years of expertise but also a 
+        fervent passion for experimenting with flavors and textures, all while honoring the age-old sushi-making traditions.</p>
+
+        <p>At SushiT, each dish is a masterpiece. We take pride in using only the freshest, highest quality ingredients, 
+        sourced directly from Japan and blended with the finest local produce, 
+        to create unique flavors that satisfy both sushi connoisseurs and those new to the Japanese culinary journey.</p>
+        
+        <span className="text-primary font-bold">We look forward to welcoming you soon!</span>
       </div>
       </section>
       <section className="text-center my-8">

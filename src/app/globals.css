@@ -11,12 +11,14 @@ section.hero{
 }
 input[type ="email"],
 input[type ="password"],
+input[type ="tel"],
 input[type ="text"]{
     @apply block w-full my-2 rounded-xl;
     @apply border p-2 border-gray-300 bg-gray-200 ;
 }
 input[type ="email"]:disabled,
 input[type ="password"]:disabled,
+input[type ="tel"]:disabled,
 input[type ="text"]:disabled{
     @apply  bg-gray-300 border-0 cursor-not-allowed text-gray-500;
 }
@@ -30,4 +32,22 @@ button[type="submit"], .submit{
 }
 button[type="submit"]:disabled, .submit:disabled{
     @apply cursor-not-allowed bg-red-400  ;
+}
+.fadeIn {
+    animation: fadeInAnimation 1s ease-out forwards;
+}
+
+.fadeOut {
+    opacity: 0;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

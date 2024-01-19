@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image';
 import { signOut, useSession } from 'next-auth/react'
 export default function Header() {
     const session = useSession();
@@ -15,8 +16,8 @@ export default function Header() {
         <header className='flex items-center justify-between'>
         
           <nav className='flex items-center gap-8 text-gray-500 font-semibold'>
-              <Link className='text-primary font-semibold text-2xl' href="/">
-                ST PIZZA
+              <Link className='text-primary font-semibold text-2xl flex ' href="/">
+                <Image src={'/logo.png'} width={140} height={140} alt="pizza" />
               </Link>
               <Link href={''}>Home</Link>
               <Link href={''}>Menu</Link>

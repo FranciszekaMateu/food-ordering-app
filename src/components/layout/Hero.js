@@ -1,19 +1,20 @@
+'use client'
 import Image from 'next/image'
 import Right from '../icons/Right'
+import { useInView } from 'react-intersection-observer';
 export default function Hero() {
     return (
-        <section className='hero mt-4'>
+        <section className={`hero mt-4 fadeIn `}>
             <div className='py-12'>
-                <h1 className='text-4xl font-semibold '>
-                    Everthing <br/>
-                    tastes better<br/>
-                     with a little bit of a&nbsp;
-                    <span className='text-primary'>
-                        PIZZA
-                    </span>
+                <h1 className='text-5xl font-semibold '>
+                <span className='text-primary'>
+                        Sushi 
+                    </span><br/>
+                    a&nbsp;touch of delight<br/>
+                    to every biter<br/>      
                 </h1>
                 <p className='my-6 text-gray-500 text-sm'>
-                    Pizza is the missing ingredient in your life
+                    Sushi is the secret ingredient that completes your existence
                 </p>
                 <div className='flex gap-4 text-sm' >
                     <button className='bg-primary uppercase flex justify-center rounded-full text-white py-2 gap-2 px-4 
@@ -31,7 +32,7 @@ export default function Hero() {
             </div>
 
             <div className='relative'>
-                <Image src={'/pizza.png'} layout='fill' objectFit='contain' alt="pizza" />
+                <Image src={'/sushi.png'} layout='fill' objectFit='contain' alt="pizza" />
             </div>
         </section>
             )

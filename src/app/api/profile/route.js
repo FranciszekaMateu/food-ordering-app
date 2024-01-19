@@ -7,11 +7,8 @@ export async function PUT(req) {
     const data = await req.json();
     const session = await getServerSession(authOptions);
     const email = session.user.email;
-    if ('name' in data) {
-        await User.updateOne({email}, {name: data.name});
-    }
-    if('image' in data) {   
-        await User.updateOne({email}, {image: data.image});
-    }
+    
+        await User.updateOne({email}, date);
+    
     return Response.json(true);
 }
