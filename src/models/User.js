@@ -7,9 +7,10 @@ const UserSchema = new Schema({
   image: {type: String},
   phone : {type: String},
   address : {type: String},
-  postalCode : {type: String},
+  postal: {type: String},
   city : {type: String},
   country : {type: String},
+  admin : {type: Boolean,default: false}
 
 }, {timestamps: true});
 

@@ -13,8 +13,11 @@ input[type ="email"],
 input[type ="password"],
 input[type ="tel"],
 input[type ="text"]{
-    @apply block w-full my-2 rounded-xl;
+    @apply block w-full mb-2 rounded-xl;
     @apply border p-2 border-gray-300 bg-gray-200 ;
+}
+label + input {
+    margin-top: -2px;
 }
 input[type ="email"]:disabled,
 input[type ="password"]:disabled,
@@ -50,4 +53,13 @@ button[type="submit"]:disabled, .submit:disabled{
         opacity: 1;
         transform: translateX(0);
     }
+}
+div.tabs > * {
+    @apply bg-gray-300 text-gray-700 px-4 py-2 rounded-full;
+}
+div.tabs > *:hover {
+    @apply bg-gray-400;
+}
+div.tabs > *.active {
+    @apply bg-primary text-white ;
 }
