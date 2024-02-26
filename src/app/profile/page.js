@@ -3,11 +3,9 @@
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BeatLoader } from 'react-spinners';
+import EditableImage from "../../components/layout/EditableImage"
 import  UsersTabs from "../../components/layout/UserTabs"
-import Image from "next/image";
 import toast from "react-hot-toast";
-import Link from "next/link";
 import Loader from '../../components/layout/Loader';
 export default function ProfilePage() {
   const session = useSession();
@@ -88,31 +86,6 @@ export default function ProfilePage() {
     return redirect('/login');
   }
 
-  async function handleFileChange(ev) {
-    const files = ev.target.files;
-    if (files?.length === 1) {
-      const data = new FormData();
-      data.set('file', files[0]);
-
-      const uploadingPromise = fetch('/api/upload', {
-        method: 'POST',
-        body: data,
-      }).then(async (response) => {
-        if (response.ok) {
-          const link = await response.json();
-          setImage(link);
-        } else {
-          throw new Error('Failed to upload');
-        }
-      });
-
-      await toast.promise(uploadingPromise, {
-        loading: 'Uploading',
-        success: 'Uploaded',
-        error: 'Failed to upload',
-      });
-    }
-  }
 
   return (
     <section  className={` mt-8 `}>
@@ -126,23 +99,8 @@ export default function ProfilePage() {
         <div className="flex gap-4">
           <div>
             <div className="p-2 rounded-lg relative max-w-[120px]">
-              {image && (
-                <Image
-                  className="rounded-lg max-w-[120px] relative p-2"
-                  src={image}
-                  alt={'avatar'}
-                  width={250}
-                  height={250}
-                />
-              )}
-
-              <label>
-                <input type="file" className="hidden" onChange={handleFileChange} />
-                <span className="block border rounded-lg p-2 text-center font-semibold border-gray-300 cursor-pointer">
-                  Edit
-                </span>
-              </label>
-            </div>
+            <EditableImage link={image} setLink={setImage} />
+          </div>
           </div>
 
           <form className="grow" onSubmit={handleProfileInfoUpdate}>
