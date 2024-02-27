@@ -93,9 +93,9 @@ export default function CategoriesPage() {
          {LoadingCategories && (
 <ul>
             {categories.map((category) => (
-              <li className="bg-gray-200 rounded-xl mb-2 p-2 px-4 flex gap-1 cursor-pointer" key={category._id}>
+              <li className=" rounded-xl mb-2 p-2 px-4 flex gap-1 cursor-pointer" key={category._id}>
                 <button onClick={() => {
-                  setEditCategory(category.name);
+                  setEditCategory(category);
                   setCategoryName(category.name);
                 }
                 } className="border-none">{category.name}</button>    

@@ -3,24 +3,41 @@ import UserTabs from "@/components/layout/UserTabs";
 import useProfile from "@/components/UseProfile";
 import Loader from "@/components/layout/Loader";
 import EditableImage from "@/components/layout/EditableImage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import {redirect} from "next/navigation";
+import { redirect } from "next/navigation";
 import Left from "@/components/icons/Left";
 import toast from "react-hot-toast";
-export default function NewMenuItemPage() {
+import { useParams } from "next/navigation";
+
+
+
+export default function EditMenuItemPage() {
+  const {id} = useParams();
   const { loading: profileLoading, data: profileData } = useProfile();
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [basePrice, setBasePrice] = useState(0);
   const [redirectToItems, setRedirectToItems] = useState(false);
+  useEffect(() => {
+    fetch("/api/menu-items/").then((res) => {
+      res.json().then((items) => {
+        const item = items.find((item) => item._id === id);
+        setImage(item.image);
+        setName(item.name);
+        setDescription(item.description);
+        setBasePrice(item.basePrice);
+      });
+    });
+  }, []);
+
   async function handleFormSubmit(ev) {
     ev.preventDefault();
-    const data = { name, description, basePrice, image };
+    const data = { name, description, basePrice, image,_id:id };
     const savingPromise = new Promise(async (resolve, reject) => {
       const response = await fetch("/api/menu-items", {
-        method: "POST",
+        method: "PUT",
         body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
@@ -37,9 +54,9 @@ export default function NewMenuItemPage() {
       success: "Created menu item",
       error: "Error",
     });
-    setRedirectToItems(true);
+    setTimeout(setRedirectToItems(true), 1000);
   }
-   if (redirectToItems) {
+  if (redirectToItems) {
     return redirect("/menu-items/");
   }
   if (profileLoading) {
@@ -50,9 +67,8 @@ export default function NewMenuItemPage() {
     <section className="mt-8">
       <UserTabs isAdmin={true} />
       <div className="max-w-md mx-auto mt-8">
-        <Link className="button"   href="/menu-items/">
-          
-          <Left/>
+        <Link className="button" href="/menu-items/">
+          <Left />
           <span>Show all menu items</span>
         </Link>
       </div>
