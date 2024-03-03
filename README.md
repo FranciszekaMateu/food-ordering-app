@@ -1,4 +1,4 @@
-## README.md
+# Food ordering app
 
 **Next.js Fullstack Sushi Restaurant Application**
 
