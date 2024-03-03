@@ -23,7 +23,7 @@ This fullstack application is an example of how to create a website for a sushi 
 **Setup:**
 
 1. Clone this repository.
-2. Install the dependencies: `npm install`
+2. Install the dependencies: `yarn add`
 3. Create a MongoDB account and obtain the connection string.
 4. Create an Amazon S3 account and obtain the access keys.
 5. Configure the environment variables in `.env`.
