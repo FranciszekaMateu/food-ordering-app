@@ -1,37 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Next.js Fullstack Sushi Restaurant Application
 
-## Getting Started
+This fullstack application is an example of how to create a website for a sushi restaurant using Next.js, MongoDB, Amazon S3, and NextAuth. The application includes the following features:
 
-First, run the development server:
+Homepage: Displays a presentation of the restaurant, including images, menu, and location.
+Menu: Allows users to browse the restaurant's menu, with images and descriptions of each dish.
+Orders: Users can place online orders for delivery or pickup.
+Profile: Users can create a profile to save their contact information and order preferences.
+Google Sign-In: Users can sign in with their Google account for convenience.
+Email Sign-In: Users can sign in with their email address and password.
+User Registration: Users can register to create an account.
+Admin Dashboard: A dashboard for restaurant staff to manage orders, menu, images, and users.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Technologies used:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Next.js: React framework for building fullstack applications.
+MongoDB: NoSQL database for storing data.
+Amazon S3: Cloud storage service for storing images.
+NextAuth: Authentication solution for Next.js that supports Google, Facebook, and email.
+Setup:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Clone this repository.
+Install the dependencies: npm install
+Create a MongoDB account and obtain the connection string.
+Create an Amazon S3 account and obtain the access keys.
+Configure the environment variables in .env.local.
+Start the application: npm run dev
+Usage:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# food-ordering-app
+The application can be deployed on Vercel or any other hosting provider.
